@@ -4,12 +4,14 @@ def is_even(x):
     return True
   else:
     return False
+
 #check if a number is an integer
 def is_int(x):
   if x - round(x) != 0:
     return False
   else:
     return True
+
 #sum digits of a number
 def digit_sum(n):
   n = str(n)
@@ -25,6 +27,7 @@ def factorial(x):
     total *= x
     x -= 1
   return total
+
 #check if a number is prime
 def is_prime(x):
   if x < 2:
@@ -37,6 +40,7 @@ def is_prime(x):
           return False
   else:
     return True
+
 #return a string in reverse
 def reverse(text):
   x = 1
@@ -45,22 +49,70 @@ def reverse(text):
     s += text[len(text)-x]
     x += 1
   return s
+
 #remove vowels from a string
 def anti_vowel(text):
   for x in text:
     if x in "aeiouAEIOU":
       text = text.replace(x, "")
   return text
+
 #scrabble score calculator
 score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
          "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
          "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
          "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
-         "x": 8, "z": 10}
-         
+         "x": 8, "z": 10}      
 def scrabble_score(word):
   scrab_score = 0
   for x in word:
     x = x.lower()
     scrab_score += score[x]
   return scrab_score
+
+#censor words
+def censor(text, word):
+  broken = text.split()
+  final_word = ""
+  star = "*" * len(word)
+  mark = 0
+  for x in broken:
+    if x == word:
+      broken[mark] = star
+    mark += 1
+  final_word = " ".join(broken)
+  return final_word
+
+#count items in a list
+def count(sequence, item):
+  count = 0
+  for x in sequence:
+    if x == item:
+      count += 1
+  return count
+
+#remove odd numbers from a list
+def purify(numbers):
+  new_list = []
+  for x in numbers:
+    if int(x) % 2 == 0:
+      new_list.append(x)
+  return new_list
+
+#multiply all the numbers in a list
+def product(numbers):
+  answer = 1
+  for x in numbers:
+    answer *= x
+  return answer
+
+#remove duplicate items from a list
+def remove_duplicates(items):
+  new_items = []
+  count = 0
+  for x in items:
+    if x not in new_items:
+      new_items.append(x)
+  return new_items
+
+#
