@@ -115,4 +115,15 @@ def remove_duplicates(items):
       new_items.append(x)
   return new_items
 
-#
+#find the median of a list
+def median(numbers):
+  numbers = sorted(numbers)
+  if len(numbers) % 2 != 0:
+    index = len(numbers)/2
+    return numbers[int(index)]
+  else:
+    index1 = len(numbers)/2 - 1
+    index2 = len(numbers)/2
+    summ = numbers[index1] + numbers[index2]
+    aver = summ/2.
+    return aver
