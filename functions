@@ -127,3 +127,13 @@ def median(numbers):
     summ = numbers[index1] + numbers[index2]
     aver = summ/2.
     return aver
+
+#take a string and return the string with alternating capital and lowercase letters
+def myfunc(astring):
+    newlist = []
+    for x in range(0, len(astring)):
+        if x % 2 == 0:
+            newlist.append(astring[x].upper())
+        elif x % 2 != 0:
+            newlist.append(astring[x].lower())
+    return ''.join(newlist)
