@@ -162,4 +162,76 @@ def makes_twenty(a,b):
     else:
         return False
 
+#Ffunction that capitalizes the first and fourth letters of a name
+def capfirstandfourth(mystring):
+    newstring = mystring[0].capitalize() + mystring[1:3] + mystring[3].capitalize() + mystring[4:]
+    return newstring
+
+#Given a sentence, return a sentence with the words reversed
+def masteryoda(mystring):
+    newlist = mystring.split()
+    newlist = newlist[::-1]
+    return " ".join(newlist)
+
+#Given an integer n, return True if n is within 10 of either 100 or 200
+def almost_there(number):
+    if abs(number - 100) < 11:
+        return True
+    elif abs(number-200) < 11:
+        return True
+    else:
+        return False
+
+#Given a list of ints, return True if the array contains a 3 next to a 3 somewhere
+def has_33(number):
+    for x in range(0,len(number)-1):
+        if number[x:x+2] == [3,3]:
+            return True
+        
+    return False
+
+#Given a string, return a string where for every character in the original there are three characters
+def paper_doll(mystring):
+    newstring = []
+    for x in range(len(mystring)):
+        newstring.append(mystring[x]*3)
+    return "".join(newstring)
+
+#Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
+def blackjack(a,b,c):
+    if (a+b+c) <= 21:
+        return a+b+c
+    elif a == 11 or b == 11 or c == 11 and ((a+b+c)-10) <= 21:
+        return ((a+b+c) - 10)
+    else:
+        return "Bust!"
+
+#Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
+def summer_69(numbers):
+    for x in range(len(numbers)):
+        if numbers[x] == 6:
+            index1 = x
+        elif numbers[x] == 9:
+            index2 = x+1
+    if 6 in numbers and 9 in numbers:
+        del numbers[index1:index2]
+    answer = 0
+    for x in numbers:
+        answer += x
+    return answer
+
+#Write a function that takes in a list of integers and returns True if it contains 007 in order
+def spy_game(numbers):
+
+    bond = [0,0,7,'x']
+    
+    for number in numbers:
+        if number == bond[0]:
+            bond.pop(0)
+    
+    return len(bond) == 1
+
+#
+
+
 #
